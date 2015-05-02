@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'ear'
+
+sourceSets.all {
+    println java.srcDirs
+}
+
+ repositories {
+       mavenCentral()
+    }
+
+sourceSets {
+    main {
+        java {
+            srcDir 'GradleTest/src/vmoc/customer'
+        }
+    }
+}
+
+dependencies {
+  compile files('/home/SS/Oracle/Middleware/Oracle_Home/wlserver/server/lib/weblogic.jar')
+}
+
+sourceSets.all {
+    println "NEW: " + java.srcDirs
+}

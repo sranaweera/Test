@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var i = 0;
+	
+	function reset()
+	{
+		i = 0;
+	}
+
+	function sendSingleton()
+	{
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		  
+		  i+= 1;
+		  
+		xmlhttp.open("GET","rest/LocalMessageSender/singleton/",true);
+		xmlhttp.send();
+		
+// 		if(i<20)
+// 		{
+// 			setTimeout(sendSingleton(), 1000);
+// 		}
+	}
+</script>
+
+
+</head>
+<body>
+<h1>Weblogic working!</h1>
+<form action="rest/LocalMessageSender/fileread" method="POST">	
+	<input type="submit" value="send"/><button type="button" onclick="sendSingleton()">Singleton</button>
+	<button type="button" onclick="reset()">Reset</button>
+</form>
+
+</body>
+</html>
