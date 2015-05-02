@@ -9,8 +9,8 @@
   </module>
   <module>
     <web>
-      <web-uri>Testing.war</web-uri>
-      <context-root>Testing</context-root>
+      <web-uri>testing.war</web-uri>
+      <context-root>testing</context-root>
     </web>
   </module>
 </application>
